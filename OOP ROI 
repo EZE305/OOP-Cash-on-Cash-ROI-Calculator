@@ -1,0 +1,86 @@
+# ROI Calculator 
+# Income- rental income + Laundry, storage and Misc. 
+
+# Expenses -Tax, Insurance, Utilities, HOA, Lawn/Snow, Vacancy, Capital Expenditure
+# Property Management, Mortgage
+
+# Cash Flow- Income - expenses 
+
+# Cash on Cash ROI = Total Annual Cash Flow / total investment 
+# which is given as a percent and based on a year's worth of income'
+
+
+# print("Let's find your cash on cash ROI for a rental property. Let's see if it's a good investment.  ")
+# print("Lets get your income and your expenses to find your cashflow to finally find your cash on cash ROI")
+
+
+class Calculator:
+
+    def __init__(self, incomepMonth, expensespMonth, totalInvestment):
+        self.incomepMonth = incomepMonth
+        self.expensespMonth = expensespMonth 
+        self.totalInvestment = totalInvestment
+
+    def cashFlowformula(self):
+        self.cashflow = self.incomepMonth - self.expensespMonth
+        return self.cashflow
+
+    def cashFlowpYearform(self):
+        self.cashFlowpYear = self.cashflow * 12 
+        return self.cashFlowpYear 
+
+    def cOcCalculation(self):
+        self.cOcROI = self.cashflow / self.totalInvestment 
+        return self.cOcROI * 100 
+    
+
+
+money_guy1 = Calculator(1500, 1300, 45000)
+money_guy2= Calculator(2000, 400, 60000)
+
+print(money_guy1.cashFlowformula())
+print(money_guy2.cashFlowformula())
+print(money_guy1.cashFlowpYearform())
+print(money_guy2.cashFlowpYearform())
+print(money_guy1.cashFlowformula())
+print(money_guy2.cashFlowformula())
+print(money_guy1.cOcCalculation())
+print(money_guy2.cOcCalculation())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Idea for more complicated calculator involving user input 
+
+# first make an income calulator by including rental income, laundry, storage and Misc. in a question when we run the program later on
+
+#     def incomeCalc(self):
+#         rent = int(input("How much do you make in rental income per year?"))
+#         laund = int(input("and in laundry per month?"))
+#         str_misc = int(input("Lastly, how much do you make in storage and misc. charges per month?"))
+#         total_inc_pmonth = rent + laund + str_misc
+#         total_inc_pyear = total_inc_pmonth * 12 
+#         print(f" Your total income per month is {total_inc_pmonth} and per year is {total_inc_pyear}")
+
+
+
+# def run():
+#     while True:
+#         response = input("What part would you like to add first? Income? Expenses? or Total Investment(TI)?")
+
+#         if response.lower() == "income":
+#             run incomeCalc(self)
+
+
+
